@@ -39,3 +39,36 @@
 
 ## 1.7 let, const, var
 
+- let
+  - 다른 값으로 바뀔 수 있음(재할당 가능)
+  - 블럭 레벨 스코프
+  - 재선언 불가
+- const
+  - 바뀔 수 없음
+  - 블럭 레벨 스코프
+  - 재선언 불가
+- var
+  - 바뀔 수 있음(재할당 가능)
+  - 함수 레벨 스코프
+  - 재선언 가능
+- let, const를 사용하는 것이 좋음
+
+
+
+## 1.8 Data Types on JS
+
+- const부터 사용
+  - 필요해지면 let 사용
+
+
+
+## 1.9 Organizing Data with Arrays
+
+- Array
+- Object
+- camelCase
+
+
+
+## 1.10 Organizing Data with Objects
+
