@@ -72,3 +72,8 @@
 
 ## 1.10 Organizing Data with Objects
 
+- Array: []
+- Object: {}
+
+- , "" 빼먹는 실수 조심
+- JS 에러가 있어도, HTML과 CSS는 문제 없음

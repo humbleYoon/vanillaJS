@@ -1,26 +1,19 @@
-var a = 221;
-var b = a - 5;
-a = 4;
-console.log(b, a);
+const nocoInfo = {
+    name: "Nico",
+    age: 30,
+    gender: "Male",
+    isHandsome: true,
+    favMovies: ["Along the gods", "LOTR", "Oldboy"],
+    favFood: [
+        {
+            name:"Kimchi",
+            fatty: false
+        },
+        {
+            name: "Cheese berger",
+            fatty: true
+        }
+    ]   
+}
 
-/* String
-const what = "Nicolas";
-*/
-/*
-Boolean
-const wat = true;
-*/
-/*
-Number
-const wat = 666;
-*/
-/*
-Float
-const wat = 55.1;
-*/
-const something = "Something"
-
-const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun",
-                    54, true, "stuff", "lalala", something];
-
-console.log(daysOfWeek);
+console.log(nocoInfo.favFood[0].name);
