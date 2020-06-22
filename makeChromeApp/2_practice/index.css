@@ -1,11 +1,16 @@
-body{
-    background-color: blue;
+body {
+  background-color: #ecf0f1;
+}
+
+.btn {
+  cursor: pointer;
 }
 
 h1 {
-    color: white;
+  color: #2c3e50;
+  transition: color 0.5s ease-in-out;
 }
 
-#title {
-
+.clicked {
+  color: #7f9c9d;
 }
