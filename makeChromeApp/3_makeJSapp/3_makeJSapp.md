@@ -50,3 +50,157 @@ function init() {
 
 
 
+## 3.2 Saving the User Name part One
+
+- localStorage
+  - setItem
+  - getItem
+
+- index.html
+
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Something</title>
+      <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+      <div class="js-clock">
+        <h1>00:00</h1>
+      </div>
+      <form class="js-form form">
+        <input type="text" placeholder="What is your name?" />
+      </form>
+      <h4 class="js-greetings greetings"></h4>
+      <script src="clock.js"></script>
+      <script src="greeting.js"></script>
+    </body>
+  </html>
+  
+  ```
+
+- index.css
+
+  ```css
+  body {
+    background-color: #ecf0f1;
+  }
+  
+  .btn {
+    cursor: pointer;
+  }
+  
+  h1 {
+    color: #2c3e50;
+    transition: color 0.5s ease-in-out;
+  }
+  
+  .clicked {
+    color: #7f9c9d;
+  }
+  
+  .form,
+  .greetings {
+    display: none;
+  }
+  
+  .showing {
+    display: block;
+  }
+  
+  ```
+
+- greeting.js
+
+  ```javascript
+  const form = document.querySelector(".js-form"),
+    input = form.querySelector("input"),
+    greeting = document.querySelector(".js-greetings");
+  
+  const USER_LS = "currentUser",
+    SHOWING_ON = "showing";
+  
+  function paintGreeting(text) {
+    greeting.classList.add(SHOWING_CN);
+    greeting.innerText = `Hello ${text}`;
+  }
+  
+  function loadName() {
+    const currentUser = localStorage.getItem(USER_LS);
+    if (currentUser === null) {
+      // she is not
+    } else {
+      // she is
+      paintGreeting(currentUser);
+    }
+  }
+  
+  function init() {
+    loadName();
+  }
+  
+  init();
+  
+  ```
+
+  
+
+## 3.3 Saving the User Name part Two
+
+- form
+  - submit
+    - event.preventDefault();
+      - form 작성하고 제출할시 새로고침 되는 것이 default
+      - event.preventDefault(); 를 통해 default 기능을 막음
+- input.value
+
+```javascript
+const form = document.querySelector(".js-form"),
+  input = form.querySelector("input"),
+  greeting = document.querySelector(".js-greetings");
+
+const USER_LS = "currentUser",
+  SHOWING_ON = "showing";
+
+function saveName(text) {
+  localStorage.setItem(USER_LS, text);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const currentValue = input.value;
+  paintGreeting(currentValue);
+  saveName(currentValue);
+}
+
+function askForName() {
+  form.classList.add(SHOWING_ON);
+  form.addEventListener("submit", handleSubmit);
+}
+
+function paintGreeting(text) {
+  form.classList.remove(SHOWING_ON);
+  greeting.classList.add(SHOWING_ON);
+  greeting.innerText = `Hello ${text}`;
+}
+
+function loadName() {
+  const currentUser = localStorage.getItem(USER_LS);
+  if (currentUser === null) {
+    // she is not
+    askForName();
+  } else {
+    // she is
+    paintGreeting(currentUser);
+  }
+}
+
+function init() {
+  loadName();
+}
+
+init();
+
+```
+

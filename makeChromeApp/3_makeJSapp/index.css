@@ -6,11 +6,19 @@ body {
   cursor: pointer;
 }
 
-h1 {
+body {
   color: #2c3e50;
-  transition: color 0.5s ease-in-out;
 }
 
 .clicked {
   color: #7f9c9d;
+}
+
+.form,
+.greetings {
+  display: none;
+}
+
+.showing {
+  display: block;
 }
